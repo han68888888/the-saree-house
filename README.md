@@ -1,79 +1,117 @@
-# Sumanth Dental Specialists
+# Divya's Sarees — E-commerce Template
 
-A premium, luxury multi-specialty dental clinic website (Koramangala, Bengaluru) built with pure HTML, CSS, and Vanilla JavaScript.
+A production-ready, mobile-first e-commerce template for Indian saree resellers. Features a responsive design, shopping cart, wishlist, and WhatsApp integration — perfect for resellers to customize and launch their own saree store.
 
 ## Features
 
-- **Responsive Design** — Works perfectly on mobile, tablet, and desktop
-- **Luxury Aesthetic** — Clay & sage color scheme with elegant typography (DM Serif Display & Manrope), custom SVG logo mark
-- **Trust Signals** — NABH-standard protocols, no-cost EMI options, Google rating, animated metrics
-- **Interactive Elements**
-  - Smooth scroll navigation with blur navbar
-  - Mobile hamburger menu (fixed positioning bug resolved)
-  - Animated counters for metrics
-  - Before/After image slider
-  - FAQ accordion with smooth expand/collapse
-  - Testimonial carousel
-  - Reveal-on-scroll animations
+- **Hero Carousel**: 5 rotating promotional banners with offers
+- **Product Catalog**: 45+ handpicked sarees across multiple collections
+- **Shopping Cart**: Add/remove items, localStorage persistence, tier-based discounts
+- **Wishlist**: Save favorite sarees for later
+- **Mobile-First Design**: Fully responsive from 375px to 1280px+ viewports
+- **WhatsApp Integration**: Direct checkout via WhatsApp
+- **Occasion-Based Shopping**: 11 illustrated collection cards (Wedding, Haldi, Mehendi, etc.)
+- **Customer Testimonials**: Photo gallery of real customer reviews
+- **Trust Badges**: Authenticity, fast shipping, easy returns
+- **Instagram Community**: Links to social channels
 
-- **Accessibility**
-  - Semantic HTML5
-  - ARIA labels and live regions
-  - Keyboard navigation support
-  - Focus-visible states
-  - Skip-to-content link
+## Quick Start
 
-- **Performance**
-  - No frameworks — pure vanilla JS
-  - Lazy-loaded images
-  - Responsive images with srcset
-  - Optimized animations (transform/opacity only)
-  - ~27KB CSS + ~7KB JS
+1. **No build process required** — just open `index.html` in a browser
+2. All product data lives in `js/data.js` — no database needed
+3. Customize colors, brand name, and products by editing `data.js`
+4. All styling uses CSS tokens for easy re-theming
 
-- **SEO**
-  - Structured data (JSON-LD)
-  - Meta tags
-  - Open Graph support
-  - Semantic headings
+## Re-skinning for Your Store
 
-## Tech Stack
+This template is designed to be re-skinnable. To launch your own saree store:
 
-- **HTML5** — Semantic markup
-- **CSS3** — Grid, Flexbox, custom properties
-- **Vanilla JavaScript** — No dependencies
+### 1. Update Brand Info
+Edit `js/data.js`, find the `brand` object:
+```javascript
+brand: {
+  name: "Your Saree Store Name",
+  tagline: "Your tagline here",
+  whatsappNumber: "YOUR_WHATSAPP_NUMBER",
+  instagram: "@your_instagram_handle",
+  city: "Your City"
+}
+```
+
+### 2. Customize Colors
+Edit `css/style.css`, update the CSS variables at the top:
+```css
+--kumkum: #YOUR_ACCENT_COLOR;
+--zari: #YOUR_GOLD_COLOR;
+--ivory: #YOUR_BACKGROUND_COLOR;
+```
+
+### 3. Add Your Products
+In `js/data.js`, update the `products` array with your sarees:
+- Update product names, prices, fabrics, occasions
+- Replace image IDs with your own (from Pexels or your server)
+- Update product collections
+
+### 4. Replace Images
+- Update hero banners in `assets/hero/`
+- Update occasion illustrations in `assets/occasions/`
+- Update collection preview images in `assets/`
+
+### 5. Adjust Shipping & Pricing
+In `data.js`, configure:
+- `freeShippingOver` — minimum order for free shipping
+- `saveTiers` — bulk discount thresholds
+- `fabricOffers` — special fabric promotions
 
 ## File Structure
 
 ```
-.
-├── index.html          # Main page
+Divya's Sarees/
+├── index.html                 # Homepage
+├── product.html               # Individual product page
+├── shop.html                  # Shop/catalog with filters
 ├── css/
-│   └── style.css       # All styles (design tokens, components, responsive)
+│   └── style.css              # All styles (1800+ lines, CSS tokens)
 ├── js/
-│   └── script.js       # Interactions (navbar, modals, carousel, etc.)
-├── README.md
-└── .gitignore
+│   ├── data.js                # 🔑 MAIN: All products, data, branding
+│   ├── app.js                 # Core cart, wishlist, UI logic
+│   ├── home.js                # Homepage rendering
+│   ├── shop.js                # Shop page filtering
+│   └── product.js             # Product page logic
+└── assets/
+    ├── brand/                 # Logo mark, favicon
+    ├── hero/                  # Hero carousel images (5)
+    ├── occasions/             # Occasion illustrations (11)
+    └── [product images]       # Product photos
 ```
 
-## Local Development
+## Technologies
 
-1. Clone the repository
-2. Open `index.html` in a browser (or serve via HTTP for best results)
-3. No build step required — changes to CSS/JS are instant
+- **Frontend**: Vanilla HTML, CSS, JavaScript (no build tools, no dependencies)
+- **Styling**: CSS custom properties (variables) for easy re-theming
+- **Data**: Single `window.DIVYA` object with all products, collections, occasions
+- **Storage**: localStorage for cart and wishlist persistence
+- **Images**: Pexels API (free stock) + custom uploads supported
+- **Performance**: IntersectionObserver for lazy loading, optimized images
 
-## Deployment
+## Customization Guide
 
-### Netlify (Recommended)
+### Change Logo
+Replace `assets/brand/mark.svg` and update favicon reference in HTML
 
-1. Push to GitHub
-2. Connect repo to Netlify (drag-and-drop or GitHub auth)
-3. Build command: (leave empty)
-4. Publish directory: (leave empty, root)
-5. Deploy!
+### Add New Occasion
+1. Add entry to `occasions` array in `data.js`
+2. Add illustration to `assets/occasions/`
+3. Update `art` property with path to image
 
-### Manual Hosting
+### Adjust Discounts
+Edit `saveTiers` in `data.js` to change bulk discount tiers
 
-Simply copy all files to your web host. Works on any HTTP server.
+### Add Payment Methods
+Update WhatsApp message in `waLink()` function (js/app.js) or add Razorpay integration
+
+### Change Layout
+Edit grid columns, spacing, and fonts in `css/style.css` using CSS variables
 
 ## Browser Support
 
@@ -81,15 +119,21 @@ Simply copy all files to your web host. Works on any HTTP server.
 - Firefox 88+
 - Safari 14+
 - Edge 90+
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Future Enhancements
+## Performance
 
-- Add a contact form backend
-- Blog section
-- Patient portal
-- Online appointment booking
-- Multilingual support
+- Lightweight: ~50KB HTML/CSS/JS (uncompressed)
+- Fast load: Images are lazy-loaded via IntersectionObserver
+- No external dependencies: Everything is vanilla JavaScript
+- Mobile optimized: Mobile-first responsive design
 
 ## License
 
-© 2026 Sumanth Dental Specialists. All rights reserved.
+Free to use and customize. Designed for resellers.
+
+## Credits
+
+- Product images from Pexels (free stock photography)
+- Inspiration from Vastranand and Koskii e-commerce designs
+- Built with vanilla HTML, CSS, JavaScript

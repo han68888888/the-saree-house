@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop all sarees — Divya's Sarees</title>
+  <meta name="description" content="Browse the full saree collection — filter by fabric, occasion, colour, price and collection. Kanjivaram, Banarasi, cotton, linen and more.">
+  <meta name="theme-color" content="#F8F3EA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450..650&family=Karla:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/brand/favicon.svg">
+</head>
+<body data-page="shop">
+
+  <main id="main">
+    <div class="page shop-hero">
+      <h1 id="shop-title">Shop</h1>
+    </div>
+
+    <!-- always-visible filter options: tap to filter, no menus -->
+    <div class="page opt-rows">
+      <div class="opt-row">
+        <span class="opt-row__label">Occasion</span>
+        <div class="opt-row__chips" id="optrow-occasion"></div>
+      </div>
+      <div class="opt-row">
+        <span class="opt-row__label">Collection</span>
+        <div class="opt-row__chips" id="optrow-collection"></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filter-bar">
+      <div class="page filter-bar__in">
+        <div class="chip-row" id="chip-row" role="toolbar" aria-label="Filters"></div>
+      </div>
+      <div class="filter-drop" id="filter-drop" hidden>
+        <div class="filter-drop__in">
+          <div class="filter-drop__head">
+            <h3 id="drop-title"></h3>
+            <button type="button" id="drop-reset">Reset</button>
+          </div>
+          <div class="filter-drop__opts" id="drop-opts"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <p class="result-line" id="result-line" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="page shop-grid-wrap">
+      <div class="prod-grid" id="shop-grid"></div>
+      <div class="shop-empty hidden" id="shop-empty">
+        <h3>No sarees match those filters</h3>
+        <p>Loosen a filter or two, or browse the full collection.</p>
+        <button class="btn btn--primary" type="button" id="empty-clear">Clear all filters</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
