@@ -1,5 +1,5 @@
 /* =========================================================================
-   DIVYA'S SAREES — PRODUCT DETAIL
+   THE SAREE HOUSE — PRODUCT DETAIL
    Gallery + zoom, price/offer, stock, delivery, reviews (seeded mock),
    wishlist, add-to-cart, related rail, sticky mobile buy bar.
    ========================================================================= */
@@ -7,10 +7,10 @@
 (function () {
   "use strict";
 
-  var D = window.DIVYA;
+  var D = window.SAREE_HOUSE;
 
   document.addEventListener("DOMContentLoaded", function () {
-    var A = window.DivyaApp;
+    var A = window.SareeHouseApp;
     var $ = A.$, $$ = A.$$, esc = A.esc, money = A.money, I = A.icons;
 
     var root = $("#pdp-root");

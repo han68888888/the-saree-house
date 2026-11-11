@@ -1,5 +1,5 @@
 /* =========================================================================
-   DIVYA'S SAREES — DATA LAYER
+   THE SAREE HOUSE — DATA LAYER
    Everything a reseller would change lives in this file: brand, catalog,
    media, reels, testimonials, copy. Layout and behaviour never touch it.
    Re-skin the store for a new seller by editing data here — not code.
@@ -17,14 +17,14 @@
 
     /* ------------------------------------------------ brand ------------- */
     brand: {
-      name: "Divya's Sarees",
-      short: "Divya's",
+      name: "The Saree House",
+      short: "The Saree House",
       /* logo lockup: line 1 in the display serif, line 2 letterspaced in gold */
-      wordmark: { top: "Divya's", bottom: "Sarees" },
+      wordmark: { top: "The Saree", bottom: "House" },
       tagline: "Handpicked sarees, delivered with love",
       whatsappNumber: "919876543210",
-      whatsappGreeting: "Hi Divya's Sarees! I'd like help choosing a saree.",
-      instagram: "@divyas.sarees",
+      whatsappGreeting: "Hi The Saree House team! I'd like help choosing a saree.",
+      instagram: "@thesareehouse",
       city: "Hyderabad",
       freeShippingOver: 1999,
       currency: "INR"
@@ -977,13 +977,13 @@
       instagram: {
         title: "Follow us on Instagram",
         line: "Daily drape videos, styling ideas and behind-the-scenes.",
-        button: "Follow @divyas.sarees",
-        url: "https://instagram.com/divyas.sarees"
+        button: "Follow @thesareehouse",
+        url: "https://instagram.com/thesareehouse"
       }
     },
 
     footer: {
-      about: "Divya's Sarees brings handpicked handloom and designer sarees from weaving towns across India to your doorstep — with real humans to help you choose.",
+      about: "The Saree House brings handpicked handloom and designer sarees from weaving towns across India to your doorstep — with real humans to help you choose.",
       note: "Prices include all taxes. Blouse stitching available on request."
     }
   };
@@ -1009,5 +1009,5 @@
     ]
   };
 
-  window.DIVYA = DATA;
+  window.SAREE_HOUSE = DATA;
 })();

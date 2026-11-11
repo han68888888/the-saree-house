@@ -1,4 +1,4 @@
-# Divya's Sarees — E-commerce Template
+# The Saree House — E-commerce Template
 
 A production-ready, mobile-first e-commerce template for Indian saree resellers. Features a responsive design, shopping cart, wishlist, and WhatsApp integration — perfect for resellers to customize and launch their own saree store.
 
@@ -66,7 +66,7 @@ In `data.js`, configure:
 ## File Structure
 
 ```
-Divya's Sarees/
+The Saree House/
 ├── index.html                 # Homepage
 ├── product.html               # Individual product page
 ├── shop.html                  # Shop/catalog with filters
@@ -89,7 +89,7 @@ Divya's Sarees/
 
 - **Frontend**: Vanilla HTML, CSS, JavaScript (no build tools, no dependencies)
 - **Styling**: CSS custom properties (variables) for easy re-theming
-- **Data**: Single `window.DIVYA` object with all products, collections, occasions
+- **Data**: Single `window.SAREE_HOUSE` object with all products, collections, occasions
 - **Storage**: localStorage for cart and wishlist persistence
 - **Images**: Pexels API (free stock) + custom uploads supported
 - **Performance**: IntersectionObserver for lazy loading, optimized images

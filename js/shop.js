@@ -1,5 +1,5 @@
 /* =========================================================================
-   DIVYA'S SAREES — SHOP / LISTING
+   THE SAREE HOUSE — SHOP / LISTING
    Sticky chip filters (fabric, occasion, colour, price, collection) + sort.
    Instant updates, URL-driven deep links, thumb-reachable sheet on mobile.
    ========================================================================= */
@@ -7,10 +7,10 @@
 (function () {
   "use strict";
 
-  var D = window.DIVYA;
+  var D = window.SAREE_HOUSE;
 
   document.addEventListener("DOMContentLoaded", function () {
-    var A = window.DivyaApp;
+    var A = window.SareeHouseApp;
     var $ = A.$, $$ = A.$$, esc = A.esc, I = A.icons;
 
     /* ---------- filter model ---------- */

@@ -1,13 +1,13 @@
 /* =========================================================================
-   DIVYA'S SAREES — SHARED APP CORE
+   THE SAREE HOUSE — SHARED APP CORE
    Header, footer, drawers, cart, wishlist, product cards, helpers.
-   Reads everything from window.DIVYA (js/data.js). No backend.
+   Reads everything from window.SAREE_HOUSE (js/data.js). No backend.
    ========================================================================= */
 
 (function () {
   "use strict";
 
-  var D = window.DIVYA;
+  var D = window.SAREE_HOUSE;
 
   /* ---------------- helpers ---------------- */
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -120,8 +120,8 @@
   }
   function persist(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
 
-  var cart = store("divya_cart", []);          /* [{id, qty}] */
-  var wishlist = store("divya_wishlist", []);  /* [id] */
+  var cart = store("sareehouse_cart", []);          /* [{id, qty}] */
+  var wishlist = store("sareehouse_wishlist", []);  /* [id] */
 
   function cartCount() { return cart.reduce(function (n, it) { return n + it.qty; }, 0); }
   function cartSubtotal() {
@@ -155,21 +155,21 @@
     cart.forEach(function (it) { if (it.id === id) line = it; });
     if (line) line.qty = Math.min(line.qty + (qty || 1), p.stock);
     else cart.push({ id: id, qty: Math.min(qty || 1, p.stock) });
-    persist("divya_cart", cart);
+    persist("sareehouse_cart", cart);
     syncCartUI();
     toast("Added to cart — " + p.name, "View cart", openCart);
   }
   function setQty(id, qty) {
     cart = cart.filter(function (it) { return !(it.id === id && qty <= 0); });
     cart.forEach(function (it) { if (it.id === id) it.qty = qty; });
-    persist("divya_cart", cart);
+    persist("sareehouse_cart", cart);
     syncCartUI();
   }
   function toggleWish(id) {
     var i = wishlist.indexOf(id);
     if (i >= 0) { wishlist.splice(i, 1); toast("Removed from wishlist"); }
     else { wishlist.push(id); toast("Saved to wishlist"); }
-    persist("divya_wishlist", wishlist);
+    persist("sareehouse_wishlist", wishlist);
     $$('[data-wish]').forEach(function (b) {
       if (b.getAttribute("data-wish") === id) {
         var on = wishlist.indexOf(id) >= 0;
@@ -602,7 +602,7 @@
   });
 
   /* public surface for page scripts */
-  window.DivyaApp = {
+  window.SareeHouseApp = {
     $: $, $$: $$, esc: esc, money: money, pctOff: pctOff, product: product,
     icons: I, trustIcons: trustIcons, stars: stars, imgFrame: imgFrame,
     refreshLoadedFrames: refreshLoadedFrames,

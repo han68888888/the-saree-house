@@ -1,5 +1,5 @@
 /* =========================================================================
-   DIVYA'S SAREES — HOMEPAGE
+   THE SAREE HOUSE — HOMEPAGE
    Offer strip (desktop), occasion tiles with counts, compact reels rail
    with View all, collections, product rails, reviews, trust, newsletter.
    Data in, DOM out.
@@ -8,10 +8,10 @@
 (function () {
   "use strict";
 
-  var D = window.DIVYA;
+  var D = window.SAREE_HOUSE;
 
   document.addEventListener("DOMContentLoaded", function () {
-    var A = window.DivyaApp;
+    var A = window.SareeHouseApp;
     var $ = A.$, $$ = A.$$, esc = A.esc, money = A.money, I = A.icons;
 
     /* ================= slim offer strip (desktop only) ================= */
@@ -311,7 +311,7 @@
           '<span class="community__icon community__icon--wa">' + I.whatsapp + "</span>" +
           "<h3>" + esc(c.whatsapp.title) + "</h3>" +
           "<p>" + esc(c.whatsapp.line) + "</p>" +
-          '<a class="btn btn--wa" href="' + A.waLink("Hi! Please add me to the Divya's Sarees updates channel.") + '" target="_blank" rel="noopener">' +
+          '<a class="btn btn--wa" href="' + A.waLink("Hi! Please add me to the Saree House updates channel.") + '" target="_blank" rel="noopener">' +
             I.whatsapp + " " + esc(c.whatsapp.button) + "</a>" +
         "</div>" +
         '<div class="community__card">' +
